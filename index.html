@@ -28,15 +28,19 @@
             
             <div class="gameResult">
                 <div class="human">
+                    <p class="you">YOU</p>
                     <div id="humanPick">
                         <img class="leftStart" src="./assets/image/left-rock.png" alt="">
                     </div>
                 </div>
                 <div class="computer">
+                    <p class="com">COMPUTER</p>
                     <div id="comPick">
                         <img class="rightStart" src="./assets/image/right-rock.png" alt="">
                     </div>
                 </div>
+                 <button onclick="reset()" class="resetBtn">RESET</button>
+
             </div>
             <div class="buttons">
                 <button class="choicesBtn" onclick="choose('rock')">
@@ -49,6 +53,11 @@
                 <img src="./assets/image/choose-scissors.png" alt="">
                 </button>
             </div>
+
+            <div class="startBtn">
+                <button onclick="start(this)">START</button>
+            </div>
+           
         </div>
 
     </section>

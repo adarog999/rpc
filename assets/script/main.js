@@ -13,7 +13,7 @@ let humanPickStart = document.querySelector("#humanPick img")
 let comPickStart = document.querySelector("#comPick img")
 
 let choicesBtn = document.querySelectorAll(".choicesBtn")
-
+let resetBtn = document.querySelector(".resetBtn")
 function choose(rps) {
     let player1Img = {
         "rock":"./assets/image/left-rock.png",
@@ -38,13 +38,13 @@ function choose(rps) {
         choicesBtn[i].disabled = true
     }
     resultW_L.style.display = "none"
-    console.log('asd')
     setTimeout(() => {
     let i = Math.floor(Math.random() * 3)
     if(rps === comChoices[i]) {
         console.log('Tie')
         resultW_L.innerHTML = "Its a Tie"
         win_lose = "TIE"
+        resultW_L.style.color = "green"
     }
     else if(rps === "rock" && comChoices[i] === "scissors" || 
             rps === "scissors" && comChoices[i] === "paper" || 
@@ -76,6 +76,7 @@ function choose(rps) {
         choicesBtn[i].disabled = false
     }
     resultW_L.style.display = "block"
+    resetBtn.style.display = "block"
     },1500)
 
 }
@@ -85,3 +86,12 @@ function removeEl(el) {
     el.parentNode.remove()
 }
 
+let historyDiv = document.querySelectorAll(".history-div") 
+function reset() {
+    location.reload()
+}
+let buttons = document.querySelector(".buttons")
+function start(btn) {
+    btn.parentNode.style.display = 'none'
+    buttons.style.display = "flex"
+}

@@ -72,7 +72,7 @@ body{
     border: 1px solid #fff;
     width: 100%;
     max-width: 800px;
-    height: 400px;
+    height: 450px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -93,41 +93,142 @@ body{
     margin-top: 20px;
     letter-spacing: 1.5px;
     font-weight: 600;
+    z-index: 1;
 }
+
 .box .gameResult {
     display: flex;
     background-color: #1A6DA4;
-    background: radial-gradient(#1A6DA4,#22A699);
+    background: radial-gradient(#1A6DA4,#22A699 );
     justify-content: space-around;
     height: calc(100% - 70px);
     margin: auto 0;
+    position: relative;
 }
+.box .gameResult .human  {
+    position: relative;
+}
+.box .gameResult .computer {
+    position: relative;
+}
+.box .gameResult .human  .you {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: max-content;
+    transform: translateX(-50%);
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #1A6DA4;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+.box .gameResult .computer .com {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    background-color: #DF2E38;
+    padding: 5px 20px;
+    border-radius: 5px;
+    transform: translateX(50%);
+}
+/* .resetBtn */
+.box .gameResult .resetBtn {
+    position: absolute;
+    bottom: 5px;
+    height: max-content;
+    background-color: #1B72AC;
+    padding: 5px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    transition: all .3s;
+    transform: scale(1);
+    display: none;
+}
+.box .gameResult .resetBtn:hover {
+    transition: all .3s;
+    transform: scale(1.13);
+    background-color: #1C7AA2
+
+} 
+.box .gameResult .resetBtn:active {
+    background-color: #263D4A;
+}
+/* .resetBtn */
 .gameResult .human , .computer {
     display: grid;
     place-items: center;
 }
 .gameResult .human img , .computer img {
     width: 200px;
-    filter: brightness(10%) hue-rotate(0deg) saturate(100%);
+    margin-top: 20px;
 }
 .gameResult .human .start1{
     transform: rotate(0deg);
-    animation: leftStart .5s ease infinite;
+    animation: leftStart 1.5s  linear infinite;
 }
 .gameResult .computer .start2{
-    transform: rotate(20deg);
-    animation: leftStart .5s ease infinite;
+    transform: rotate(0deg);
+    animation: rightStart 1.5s linear infinite;
+}
+@keyframes rightStart {
+    0% {transform: rotate(0%)}
+    20% {transform: rotate(20deg)}
+    40% {transform: rotate(0deg)}
+    60% {transform: rotate(20deg)}
+    80% {transform: rotate(0deg)}
+    100% {transform: rotate(20deg)}
 }
 @keyframes leftStart {
-    from { transform: rotate(20deg)}
-    to{transform: rotate(0deg)}
+    0% {transform: rotate(0deg)}
+    20% {transform: rotate(-20deg)}
+    40% {transform: rotate(-0deg)}
+    60% {transform: rotate(-20deg)}
+    80% {transform: rotate(-0deg)}
+    100% {transform: rotate(-20deg)}
 }
 .buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 10px;
+    display: none;
+
 }
+.openButtons {
+    animation: openButtons .3s linear forwards;
+}
+
+/* startBtn */
+.startBtn {
+    height: 94.05px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.startBtn  button{
+    letter-spacing: 1.5px;
+    height: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #1A6DA4;
+    color: #fff;
+}
+/* startBtn */
 .buttons button {
     border-radius: 20px;
     background-color: transparent;
