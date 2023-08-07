@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <script src="assets/script/main.js" defer></script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="title">
+        <h1>ROCK PAPER SCISSORS GAME</h1>
+    </div>
+    <section class="game-table">
+        <div class="scoreTable">
+            <div class="human">
+                <p>Your Score</p>
+                <p id="human-score">0</p>
+            </div>
+            <div class="computer">
+                <p>Computer</p>
+                <p id="com-score">0</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <p id="win-loss" class="win-loss"></p>
+            
+            <div class="gameResult">
+                <div class="human">
+                    <div id="humanPick">
+                        <img class="leftStart" src="./assets/image/left-rock.png" alt="">
+                    </div>
+                </div>
+                <div class="computer">
+                    <div id="comPick">
+                        <img class="rightStart" src="./assets/image/right-rock.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="choicesBtn" onclick="choose('rock')">
+                    <img src="./assets/image/choose-rock.png" alt="">
+                </button>
+                <button class="choicesBtn" onclick="choose('paper')">
+                <img src="./assets/image/choose-paper.png" alt="">
+                </button>
+                <button class="choicesBtn" onclick="choose('scissors')">
+                <img src="./assets/image/choose-scissors.png" alt="">
+                </button>
+            </div>
+        </div>
+
+    </section>
+    <section class="history">
+        <p class="his-title">History</p>
+        <div class="his-move">
+            <p>Your Move</p>
+            <p>Result</p>
+            <p>Computer Move</p>
+            <p>Delete</p>
+        </div>
+    </section>
+
+
+</body>
+</html>

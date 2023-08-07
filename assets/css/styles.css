@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&family=Merriweather&family=Poppins&family=Titan+One&family=Work+Sans&display=swap');
+* {
+    padding: 0;
+    box-sizing: border-box;    
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../image/bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+}
+.title h1 {
+    background-color: #3C486B;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+
+}
+.game-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.scoreTable {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    background-color: #22A699;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+.scoreTable .human {
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #fff;
+    padding: 5px 10px;
+}
+.scoreTable .computer {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #fff;
+}
+.scoreTable div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.scoreTable div:nth-child(1) {
+    border-right: 1px solid green;
+}
+.box {
+    background-color: #263D4A;
+    border: 1px solid #fff;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+    border-radius: 20px;
+}
+.box .win-loss {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: none;
+    margin-top: 20px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+.box .gameResult {
+    display: flex;
+    background-color: #1A6DA4;
+    background: radial-gradient(#1A6DA4,#22A699);
+    justify-content: space-around;
+    height: calc(100% - 70px);
+    margin: auto 0;
+}
+.gameResult .human , .computer {
+    display: grid;
+    place-items: center;
+}
+.gameResult .human img , .computer img {
+    width: 200px;
+    filter: brightness(10%) hue-rotate(0deg) saturate(100%);
+}
+.gameResult .human .start1{
+    transform: rotate(0deg);
+    animation: leftStart .5s ease infinite;
+}
+.gameResult .computer .start2{
+    transform: rotate(20deg);
+    animation: leftStart .5s ease infinite;
+}
+@keyframes leftStart {
+    from { transform: rotate(20deg)}
+    to{transform: rotate(0deg)}
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.buttons button {
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    cursor: pointer;
+    background-color: #E74646;
+}
+.buttons button:hover {
+    background-color: #1A6FA9;
+}
+.buttons button:active {
+    background-color: blue;
+}
+.buttons button img {
+    width: 100px;
+}
+.history {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+    background-color: #22A699;
+    margin-top: 20px;
+    padding: 20px;
+    height: 350px;
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+}
+.his-title {
+    order: -2;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.history .history-div {
+    display: grid;
+    grid-template-columns: 130px 100px 160px auto;
+    text-transform: uppercase;
+    margin-top: 10px;
+    border-bottom: 1px solid gray;
+    padding: 5px;
+}
+.history .history-div button {
+    cursor: pointer;
+    height: 30px;
+}
+.his-move {
+    display: grid;
+    grid-template-columns: 130px 100px 160px auto; 
+    order: -1;
+    padding: 5px;
+}
+.history .history-div .win {
+    color: green;
+}
+.history .history-div .lose {
+    color: red;
+}
+.history .history-div .tie {
+    color: #fff;
+}
